@@ -34,4 +34,5 @@ class AppColors {
   static Color demoriteTextColor = Color(0XFFF44336);
   static Color chipGreyColor = Color(0XFFF1F1F1);
   static Color standbyColor = Color(0XFFBC7E01);
+  static Color blueColor = Color(0xFF007AFF);
 }

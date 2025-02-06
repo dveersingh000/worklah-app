@@ -5,6 +5,7 @@ class SelectBankScreen extends StatefulWidget {
   const SelectBankScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SelectBankScreenState createState() => _SelectBankScreenState();
 }
 
@@ -20,9 +21,9 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
       backgroundColor: Colors.black.withOpacity(0.5),
       body: Center(
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           width: double.infinity,
-          margin: EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
@@ -31,17 +32,17 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Choose transfer method",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _buildPayNowOption("PayNow via Mobile", "Linked", "assets/images/paynow_logo.png"),
               _buildPayNowOption("PayNow via NRIC", "Link", "assets/images/paynow_logo.png"),
-              Divider(),
+              const Divider(),
               GestureDetector(
                 onTap: () {},
-                child: Row(
+                child: const Row(
                   children: [
                     Icon(Icons.add_circle_outline, color: Colors.blue),
                     SizedBox(width: 5),
@@ -49,12 +50,12 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
-              Text("Select Bank Name *", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-              SizedBox(height: 5),
+              const SizedBox(height: 10),
+              const Text("Select Bank Name *", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 5),
               DropdownButtonFormField<String>(
                 value: selectedBank,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                 ),
@@ -69,10 +70,10 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
                   });
                 },
               ),
-              SizedBox(height: 10),
-              Text("Bank Account Number *", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-              SizedBox(height: 5),
-              TextField(
+              const SizedBox(height: 10),
+              const Text("Bank Account Number *", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 5),
+              const TextField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -80,7 +81,7 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
                   hintText: "XXXX XXXX 3456",
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Checkbox(
@@ -91,13 +92,13 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
                       });
                     },
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Text("Save these details for future cashouts", style: TextStyle(fontSize: 12)),
                   ),
                 ],
               ),
-              SizedBox(height: 10),
-              Row(
+              const SizedBox(height: 10),
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(Icons.info_outline, color: Colors.orange),
@@ -110,11 +111,11 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -128,7 +129,7 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
                     ),
                   );
                 },
-                child: Text("Proceed", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                child: const Text("Proceed", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
               ),
             ],
           ),
@@ -157,7 +158,7 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
             status,
             style: TextStyle(color: status == "Linked" ? Colors.green : Colors.blue, fontWeight: FontWeight.bold),
           ),
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           Image.asset(logoPath, height: 18), // Ensure the correct path
         ],
       ),
@@ -171,7 +172,7 @@ class _SelectBankScreenState extends State<SelectBankScreen> {
       child: Row(
         children: [
           Image.asset(logoPath, height: 20),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Text(bankName),
         ],
       ),
